@@ -4,9 +4,10 @@ interface GameBannerProps {
     adsCount: number;
 }
 
-
 export function GameBanner(props: GameBannerProps) {
+
     return (
+
         <a href="" className="relative rounded-lg overflow-hidden">
             <img src={props.bannerUrl} alt="" />
 
@@ -15,5 +16,8 @@ export function GameBanner(props: GameBannerProps) {
                 <span className='text-zinc-300 text-sm block mt-1'>{props.adsCount} anúncio(s)</span>
             </div>
         </a>
+
+
     )
+
 }

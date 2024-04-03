@@ -4,7 +4,6 @@ import logoImg from './assets/logo-nwl-esports.svg';
 import { GameBanner } from './components/GameBanner';
 import { ProcureSeuDuo } from './components/ProcureSeuDuo';
 import * as Dialog from '@radix-ui/react-dialog';
-
 import { CreateAdModal } from './components/CreateAdModal';
 import axios from 'axios';
 
@@ -20,6 +19,7 @@ interface Game {
     ads: number;
   }
 }
+
 
 function App() {
   const [games, setGames] = useState<Game[]>([])
@@ -44,14 +44,19 @@ function App() {
 
         {games.map(game => {
           return (
-            <GameBanner
+            <div><GameBanner
               key={game.id}
               bannerUrl={game.bannerUrl}
               title={game.title}
               adsCount={game._count.ads}
+
             />
-          )
-        })}
+
+            </div>)
+        },
+
+        )
+        }
 
 
 
